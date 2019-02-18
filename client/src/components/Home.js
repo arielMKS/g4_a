@@ -1,14 +1,19 @@
 import React from "react";
-import { getAll } from "../server";
+import CSVUploader from "./CSVUploader";
+import "../css/Home.css";
 
 class Home extends React.Component {
-  componentDidMount = () => {
-    console.log("componentDidMount firing");
-    getAll();
-    // .then("/api/customers");
+  state = {
+    customers: []
   };
+
   render() {
-    return <div>Welcome to the Home Page</div>;
+    return (
+      <div className="Home">
+        <h1 style={{ padding: "0.25em" }}>Welcome to the CSV file uploader</h1>
+        <CSVUploader />
+      </div>
+    );
   }
 }
 

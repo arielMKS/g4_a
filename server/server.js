@@ -1,8 +1,6 @@
 var express = require("express");
 var app = express();
-var fs = require("fs");
-var data = fs.readFileSync("customers.json", "utf8");
-var customers = JSON.parse(data);
+
 var routes = require("./app/routes");
 
 var bodyParser = require("body-parser");
@@ -13,9 +11,9 @@ var cors = require("cors"); // use cors to solve issue when using fetch() with a
 
 var port = process.env.PORT || 8080;
 
-app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(cookieParser());
+app.use(bodyParser.json({ limit: "5mb" }));
+app.use(bodyParser.urlencoded({ limit: "5mb" }));
+// app.use(bodyParser.json());
 
 app.use(cors()); // tell my express server to use the cors()
 

@@ -1,0 +1,16 @@
+    .csv-input {
+        width: 100%;
+        padding: 10px;
+        display: block;
+        margin: 15px auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+
+      /* @media screen and (min-width:7680px) {
+        .test {
+          color: green !important;
+        }
+      }
+ */
